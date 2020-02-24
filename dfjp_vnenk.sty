@@ -1,0 +1,112 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DFJP Textbooks LaTeX Style
+% Version 1.0 (2020/02/24)
+%
+% Author:
+% Petr Vnenk (petr.vnenk@upce.cz)
+%
+% Licence:
+% Free for commercial use, no attribution required.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------
+% INTRODUCTORY DEFINITIONS AND LIST OF PACKAGES (see the modification hints in brackets)
+%------------------------------------------
+
+\usepackage[german, czech, english]{babel}														% language packages (include all languages used in document, last one as the key language)
+\usepackage[utf8]{inputenc}																		% text coding
+\usepackage{graphicx}																			% use of various graphic elements
+\graphicspath{{figures/}}															% !!! --->	% path to graphic files (modify according to your needs)
+\usepackage{textcomp}																			% use of various graphic symbols
+\usepackage{nohyperref}																			% hypertext links (choose from: unicode, hidelinks, hyperref)
+\usepackage{array}																				% use of arrays and tables
+\usepackage{tabu}																				% use of more complex and long tables
+\usepackage{gensymb}																			% other useful symbols
+\usepackage{float}																				% management of floating objects
+\usepackage[top=1.5cm, left=2cm, right=1.5cm, bottom=2cm]{geometry}								% settings of page margins (modify according to your needs)
+\usepackage{titlesec}																			% settings of heading parameters
+\usepackage[hang,flushmargin]{footmisc}															% settings of footnote parameters
+\usepackage[labelfont=bf, labelsep=endash]{caption}												% settings of figures' and tables' captions
+\usepackage[nottoc]{tocbibind}																	% adds bibliography, index and table of content into table of content
+\usepackage{url}																				% manages proper use of hypertext links
+\usepackage{setspace}																			% sets line spacing
+\usepackage{tocloft}																			% formats items of table of content
+\usepackage{amsmath}																			% extended use of mathematical expressions
+\usepackage{booktabs}																			% extended options of table adjustment
+\usepackage{multirow}																			% enables multirow cells in tables
+\usepackage{graphics}																			% default package for graphical elements
+\usepackage[table]{xcolor}																		% management of colours
+\usepackage{csquotes}																			% management of citations
+\usepackage{etoolbox}																			% extended options of parentheses
+\usepackage{textcomp}																			% enables use of copyright and other symbols of that kind
+\usepackage{afterpage}																			% enables inclusion of a blank page
+\usepackage{psboxit,pstricks}																	% settings of headings' graphics
+\setlength{\arrayrulewidth}{0.5mm}																% settings of line thickness of table borders
+\setlength{\parskip}{1em}																		% vertical skip od paragraphs
+\setlength\parindent{0pt}																		% paragraph indentation
+\titleformat{\chapter}{\bfseries\fontsize{14pt}{17pt}\selectfont}{\thechapter}{0.5em}{}			% format of 1st level headings
+\titleformat{\section}{\bfseries\fontsize{12pt}{14pt}\selectfont}{\thesection}{0.5em}{}			% format of 2nd level headings
+\titleformat{\subsection}{\bfseries\fontsize{11pt}{17pt}\selectfont}{\thesubsection}{0.5em}{}	% format of 3rd level headings
+\titlespacing*{\chapter}{0pt}{6pt}{6pt}															% vertical skip of 1st level headings
+\titlespacing*{\section}{0pt}{6pt}{6pt}															% vertical skip of 2nd level headings
+\titlespacing*{\subsection}{0pt}{6pt}{6pt}														% vertical skip of 3rd level headings
+\renewcommand{\cfttoctitlefont}{\bfseries\fontsize{14pt}{17pt}\selectfont}						% format of table of content heading
+\renewcommand\cftchapafterpnum{\vskip 6pt} 														% for spacing after each chapter
+\renewcommand\cftsecafterpnum{\vskip 6pt} 														% for spacing after each section
+\setlength{\cftbeforetoctitleskip}{0in}															% vertical skip of table of content heading
+\renewcommand{\cftloftitlefont}{\bfseries\fontsize{14pt}{17pt}\selectfont}						% format of list of figures heading
+\renewcommand{\cftlottitlefont}{\bfseries\fontsize{14pt}{17pt}\selectfont}						% format of list of figures heading
+\newenvironment{fontoflistofabbreviations}{\bfseries\fontsize{14pt}{17pt}\selectfont}{}			% definition of new environment - format of list of abbreviation heading
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}				% alignment of list of abbreviation
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+%------------------------------------------
+% CODE OF GRAPHICS OF CHAPTER HEADINGS (A version of one of Vincent Zoonekynd's style, see here: http://zoonek.free.fr/LaTeX/)
+%------------------------------------------
+
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
+\def\@makechapterhead#1{%
+	\reset@font
+	\parindent \z@ 
+	\vspace*{10\p@}%
+	\hbox{%
+		\vbox{\hsize=2cm
+			\begin{tabular}{c}
+				\scshape \strut \@chapapp{} \\
+				\fbox{%
+					\vrule depth 10em width 0pt%
+					\vrule height 0pt depth 0pt width 1ex%
+					{\Huge \bfseries \strut \thechapter}%
+					\vrule height 0pt depth 0pt width 1ex%
+				}
+			\end{tabular}%
+		}%
+		\vbox{%
+			\advance\hsize by -2cm
+			\leftskip 10pt%
+			\Huge \bfseries #1
+			\vskip 10pt%
+			\hrule\par
+		}%
+	}%
+	\vskip 10\p@
+}
+\def\@makeschapterhead#1{%
+	\reset@font
+	\parindent \z@ 
+	\vspace*{10\p@}%
+	\hbox{%
+		\vbox{%
+			\advance\hsize by -2cm    
+			\hspace{1em}%
+			\Huge \bfseries #1
+			\vskip 10pt%
+			\hrule\par
+		}%
+	}%
+	\vskip 10\p@
+}
