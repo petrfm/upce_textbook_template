@@ -2,7 +2,7 @@
 
 ## Proč použít tuto šablonu?
 
-Šablona obsahuje naformátovány všechny základní části učebnice včetně ukázky obsahu, seznamů, tabulky, obrázku a seznamu literatury. Většinu parametrů lze libovolně měnit (např. základní nastavení rozměru knihy je B5, ale lze použít jiné).
+Šablona obsahuje naformátovány všechny základní části učebnice včetně ukázky obsahu, seznamů, tabulky, obrázku a seznamu literatury. Většinu parametrů lze libovolně měnit (např. základní nastavení rozměru knihy je B5, ale lze použít jiné).
 
 ## Jak začít?
 
