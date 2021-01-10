@@ -1,4 +1,4 @@
-# Šablona učebnic UPa (neoficiální).
+# Šablona učebnice UPa (neoficiální).
 
 ## Proč použít tuto šablonu?
 
